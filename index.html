@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Quenstion number :1
+        var company = "Integrify Academy";
+        console.log('a: The string = '+'Integrify Academy');
+        console.log ('b: The lenght of string is = '+ company.length);
+        console.log ('c: Upper Case = ' +company.toLocaleUpperCase());
+        console.log ('d: Lower case = ' + company.toLowerCase() );
+        console.log ('e: First word =' + company.slice(9));
+    //    console.log ('First word =' + company.substring(9));
+        console.log ('f: Include = ' + company.includes('Academy'));
+        console.log('g : ');
+        console.log ( company.split());
+        console.log ('h : '+company.replace('Integrify', 'Microsoft'));
+        console.log('i : '+ company.charAt('10'));
+        console.log('j : '+ company.charCodeAt('10'));
+        console.log('k : '+ company.indexOf('e'));
+        console.log('l : '+ company.lastIndexOf('e'));
+        console.log('m : '+ company.trim());     //trinstart&trimEnd
+        console.log('n : '+ company.startsWith('Academy', 10));
+        console.log('o : '+ company.endsWith('Academy', 17));
+        console.log('p : '+ company.match(/[A,a]/g));
+
+
+    </script>
+</body>
+</html>
