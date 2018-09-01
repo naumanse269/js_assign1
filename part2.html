@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<script>
+/*
+    // ------------------ Part 2 question1 :Loto ------------------ 
+    var loto=0;
+    for(var i=0; i<3; i++)
+    {
+    loto= Math.random() .toString(9) .slice(2,9);
+    console.log('Lucky numberv'+(i+1)+' : '+loto);
+    }
+
+ // ------------------ Part 2 question 2 :Loto ------------------ 
+
+    var loto=0;
+    function lotterPlay(){
+        loto= Math.random() .toString(9) .slice(2,9);
+        return loto;
+
+    }
+    var noOfDraws = prompt('Enter the number of Lotter draw you wish to play');
+    for(var i=1; i<=noOfDraws; i++)
+    {
+       console.log('Lucky number '+i+' : '+lotterPlay() );
+    }
+*/
+ // ------------------ Part 2 question 3 :Loto ------------------ 
+    var loto=[null];
+  
+    function arryLottery(){
+        for(var i=0; i<7; i++)
+        {
+            loto[i]=loto.push(Math.floor(Math.random()*9));
+        }   
+            console.log('before sorting'+loto);
+            loto.sort(function(a, b){return a-b});
+         //   console.log('Afer Sorting  '+loto);
+            return loto;
+               
+    }
+    var noOfDraws = prompt('Enter the number of Lotter draw you wish to play');
+    for(var i=1; i<=noOfDraws; i++)
+    {
+        console.log(arryLottery());
+    }
+        
+ 
+</script>
+
+
+</body>
+</html>
