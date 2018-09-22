@@ -79,13 +79,15 @@
        function searchData(){ // it handles the whole process of searching
         var keyWord = document.querySelector('#searchString').value.toLowerCase();
         document.querySelector('#ContentOFCountries').innerHTML = ''; 
+        let resultCountries;
             if(document.querySelector('#startWord').checked){
                 let resultStartWith = countries.filter((country,index) =>{
-                 if( country.toLowerCase().startsWith(keyWord.toLowerCase()))  
-                    return true; 
+                // if( country.toLowerCase().startsWith(keyWord.toLowerCase()))  
+                //    return true; 
+                return country.toLowerCase().startsWith(keyWord.toLowerCase());
             })              	
             displayResult(resultStartWith);   
-         } else if(document.querySelector('#anyWord').checked)  {
+         } else if(document.querySelector('#anyWord').checked )  {
                 let resultAnyWord = countries.filter((country,index) =>{
                     if( country.toLowerCase().includes(keyWord.toLowerCase())) 
                         return true ;
