@@ -22,23 +22,54 @@
                 
                 <label for="border-width">Border width in pixels</label>
                 <input type="number" id="border-width" value="2">
-
             </div>
-
+            
             <div>
+                <label for="table-background">Table background color</label>
+                <input type="color" id="table-background" value="#ffffff">
 
+                <label for="head-background">Head background color</label>
+                <input type="color" id="head-background" value="#f2f2f2">
+
+                <label for="body-background">Body background color</label>
+                <input type="color" id="body-background" value="#e4d7e8">
+
+                <label for="border-color">Border color</label>
+                <input type="color" id="border-color" value="#000000">
+            </div>
+                        
+            <div>
+                <label for="font-color">Font color</label>
+                <input type="color" id="font-color" value="#000000">
+
+                <label for="font-type">Font type</label>
+                <select id="font-type" >
+                    <option value="Courier New, monospace">Courier New</option>
+                    <option value="Montserrat, sans-serif">Montserrat</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                  </select>
+
+                <label for="font-weigth">Font Weight</label>
+                <select id="font-weigth" >
+                    <option value="normal">normal</option>
+                    <option value="bold">bold</option>
+                  </select>
+
+                <label for="text-align">Text align</label>
+                <select name="Alignment" id="text-align">
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                </select>
             </div>
             <div>
-
-            </div>
-            <div>
-
+                <button id="table-generate">Generate Table</button>
+                <h1>table area</h1>
             </div>
         </div>
+</Header>
 
-    </Header>
-
-
+<script src="./main.js"> </script>
 
 
 
