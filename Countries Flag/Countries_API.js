@@ -25,6 +25,7 @@ const url = 'https://restcountries.eu/rest/v2/all';
                 EachCountryDiv.appendChild(inner);
                 inner.style.width = '15%';
                 inner.className = 'child';
+                inner.
               }
 
            
