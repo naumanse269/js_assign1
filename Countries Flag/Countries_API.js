@@ -11,28 +11,74 @@ const contryContinent = document.querySelector('#country-language');
 const countryPopulation = document.querySelector('#country-population');
 const countryFlag = document.querySelector('#country-flag');
 */
+
+const url = 'https://restcountries.eu/rest/v2/all';
 let worldCountries =[];
 let coulumns = ['name','capital','region']
-const url = 'https://restcountries.eu/rest/v2/all';
-        fetch(url)
-        .then(response => response.json())
-       .then(countries => {
-            worldCountries = countries;
+
+let countries = [];
+let main = document.querySelector('main');
+
+fetch(url)
+  .then(response => response.json())
+  .then(countriz => {
+    let div;
+    for (let i = 0; i < countriz.length; i++) {
+      countries[i] = countriz[i]
+    }
+    console.log(countries.name);
+    
+    createCountryDiv()
+  })
 
 
-            let EachCountryDiv;
-            function createInnerDiv(inner) {
-                EachCountryDiv.appendChild(inner);
-                inner.style.width = '15%';
-                inner.className = 'child';
-                inner.
-              }
 
-           
-                EachCountryDiv = document.createElement('div');
-                const name = document.createElement('div');
-                createInnerDiv(name);
-                name.textContent = worldCountries.name;
+
+function createCountryDiv() {
+  let colorDiv;
+
+  function createInnerDiv(inner) {
+    colorDiv.appendChild(inner);
+    inner.style.width = '20%';
+    inner.className = 'child';
+  }
+  countries.forEach(country => {
+    console.log(Object.keys(country));
+    console.log(country.languages);
+    colorDiv = document.createElement('div');
+    const countryName = document.createElement('div');
+    const name = document.createElement('span');
+    createInnerDiv(name);
+    const capital = document.createElement('span');
+    createInnerDiv(capital);
+    const area = document.createElement('span');
+    createInnerDiv(area);
+    const region = document.createElement('span');
+    createInnerDiv(region);
+    const language = document.createElement('span');
+    createInnerDiv(language);
+    const flag = new Image(50, 60);
+    createInnerDiv(flag);
+    main.appendChild(colorDiv);
+    colorDiv.className = 'country';
+    countryName.className = 'country-name';
+    name.textContent = country.name;
+    capital.textContent = country.capital;
+    area.textContent = country.area;
+    region.textContent = country.region;
+    const languages = country.languages.map(lang => lang.name);
+    language.textContent = languages.join(',\n');
+    
+     
+
+    flag.src = country.flag;
+    flag.className = 'flag'
+
+    // flag.style.backgroundImage = src
+
+  })
+}
+
                 
            
            /*     
@@ -63,8 +109,7 @@ const url = 'https://restcountries.eu/rest/v2/all';
                 });
           }) */  
            
-        })
-     /* 
+             /* 
         .then(countries => {
 			let div;
             countries.forEach(country => {
