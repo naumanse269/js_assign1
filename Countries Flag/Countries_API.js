@@ -32,6 +32,9 @@ fetch(url)
   })
 
 
+  
+
+
 
 
 function createCountryDiv() {
