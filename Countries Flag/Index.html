@@ -1,24 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
 </head>
-<body>
-     <header>
-                <h1>List of All Countries</h1>
-    </header>
-    
-    <main id="wrapper" class="flex-container">
+<style>
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+#table-head{
+    display:flex;
+    justify-content: space-between;
+}
+tr{
+    display:flex;
+    justify-content: space-between;
+}
 
-    </main>
-          
-           
-        
-            <script src="./Countries_API.js"></script>
-    
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
+<body>
+  <head>countries information</head> <br> <br>
+  <div id="table-head">
+    <h5> Name</h5>
+    <h5> Capital</h5>
+    <h5> Population</h5>
+    <h5> Language</h5>
+    <h5> Flag</h5>
+</div>
+<script>
+    /*
+***
+The countries API we used during
+thelecture:https://restcountries.eu/rest/v2/all
+***
+*/
+// Extract only the folloing keys from the countries json file
+/*name,capital,population,region, subregion,languages,currencies, flag
+*/
+const url = 'https://restcountries.eu/rest/v2/all';
+        fetch(url)
+        .then(response => response.json())
+        .then(countries => {
+			let div;
+            var index=0;
+            table = document.createElement('TABLE');
+            table.setAttribute("id", "mt");
+            document.body.appendChild(table)
+            countries.forEach((country, index) => {
+              /*  if(index==0) {
+                    row=table.insertRow(index);
+                    cell = row.insertCell(0)
+                    cell.innerHTML = 'country Name';
+                    cell = row.insertCell(1)
+                    cell.innerHTML = 'Capital';
+                    cell = row.insertCell(2)
+                    cell.innerHTML = 'Population';
+                    cell = row.insertCell(3)
+                    cell.innerHTML = 'Region';
+                    cell = row.insertCell(4)
+                    cell.innerHTML = 'Language';
+                    cell = row.insertCell(5)
+                    cell.innerHTML = 'Flag';
+
+                }
+                  else{  */
+					row=table.insertRow(index)
+                    cell = row.insertCell(0)
+					cell.innerHTML = country.name;
+					cell = row.insertCell(1)
+					cell.innerHTML = country.capital;
+					cell = row.insertCell(2)
+					cell.innerHTML = country.population;
+					cell = row.insertCell(3)
+					cell.innerHTML = country.region;
+					cell = row.insertCell(4)
+					cell.innerHTML = country.languages[0]["name"];
+					cell = row.insertCell(5)
+					var img = document.createElement('img');
+    					img.src = country.flag;
+    					cell.appendChild(img)
+                    	
+					index++
+            })
+            
+        })
+</script>
 </body>
 </html>
