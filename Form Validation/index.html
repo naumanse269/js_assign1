@@ -4,9 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Html Forms</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+ <form >
+     <header>
+           <!--  <fieldset> -->
+                    <h1>Let's Talk</h1>
+                    <p>Think you have what it takes! Show us</p>
+     </header>
+            <h2>1. Personal Information</h2> 
+           <div class="personalInformation"> <br>
+               <div class="firstnameNumber">
+                    <input id="firstname" type="text"  placeholder="First Name *"  > 
+                    <input id="user-value" type="number"  placeholder="Phone*"/> <br> <br>
+                </div>
+                <div class="middle">
+                    <input type="email" required placeholder="Email*"  ><br><br>
+                    <input type="email" required placeholder="Re enter email*"  > <br><br>
+                    <input id="addres" type="text"  placeholder="Address*"  > <br><br>
+                    <input id="addres" type="text"  size="100%"> <br><br>
+                </div>
+            <section>
+                <input id="cityName" type="text"  placeholder="City Name*"  >
+                <input id="State" type="text"  placeholder="State"  >
+                <input id="county" type="text"  placeholder="County/Region*"  >
+                <input id="zip" type="text"  placeholder="Zip/Postal Code*"  >
+            </section>
+           </div>
+           <h2>2. Skills and Location</h2>
+           <div class="skillsLocation">
+               <h2>which is your primary design disciline?*</h2>
+               <div class="containerRadioButton">
+                    <input type="radio" name="radio" id="DResearchRadio" placeholder="1">
+                    <label for="DResearchRadio">Design Research</label>
+         
+                    <input type="radio" name="radio" id="VisualDesign" placeholder="2">
+                    <label for="VisualDesign">Design Research</label>
+         
+                    <input type="radio" name="radio" id="UXDesign" placeholder="3">
+                    <label for="UXDesign">UX Design</label>
+         
+                    <input type="radio" name="radio" id="FrontEndDevelopment" placeholder="4">
+                    <label for="FrontEndDevelopment">Front-end Development</label>
+                 </div>
+            <div class= "skillcolumn" >
+                <div>
+                    <h4>Do you have experience with any other disciplines?</h4>
+                    <input type="checkbox" value="visualdesign"><label>visual Design</label> <br />
+                    <input type="checkbox" value="uxdesign"><label>UX Design</label><br />
+                    <input type="checkbox" value="frontend"><label>Front-end Development</label> <br />
+                </div>
+                <div>
+                    <h4>Where are you interested in working?*</h4>
+                    <p>you must be authorized to work without visa sponsorship in the location you shoose.</p>
+                
+                    <input type="checkbox" value="Austin"><label>Austin, Texas</label> <br />
+                    <input type="checkbox" value="New York"><label> New York, New York</label><br />
+                    <input type="checkbox" value="Toronto"><label>Toronto, canada</label> <br />
+
+                    <input type="checkbox" value="Shanghai"><label>Shanghai, China</label> <br />
+                    <input type="checkbox" value="Dublin"><label>Dublin, Ireland</label><br />
+                    <input type="checkbox" value="Hursley"><label>Hursley, United Kingdom</label> <br />
+
+                    <input type="checkbox" value="Boeblingen"><label>Boeblingen, germany</label> <br />
+                    <input type="checkbox" value="Somewhere"><label>Somewhere else</label><br />
+                </div>
+            </div>
+
+
+        </div>
+            <h2>3. Portfolio</h2>
+            <div class="portfoliodiv">
+               <h3>Prove you're IBM's next great designer by showing us who you are. What you've done. How you thinki. Tell us your story </h3>
+               <input id="link" type="text"  placeholder="Portfolio Link*"  size="100%"> <br> <br>
+               <textarea rows="10" cols="50" placeholder="Anything else (another link, availability, etc)" required></textarea> <br /> <br>
+            </div>
+           <footer>
+            <br><br>
+            <input type="submit" value="Submit" /> <br><br><br><br>
+           </footer>
+     </fieldset>
+ </form>    
 </body>
 </html>
